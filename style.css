@@ -1,0 +1,119 @@
+* {
+    user-select: none;
+}
+
+body{
+padding-left: 5px;
+}
+
+.invert-signal{
+    background-image: url(res/maisoumenos.png);
+    color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.calculadora{
+    background-color: #2D2A37;
+    height: 566px;
+    width: 356px;
+    border-radius: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0 11px 7px rgba(0, 0, 0, 0.01), 0 7px 7px rgba(0, 0, 0, 0.04), 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.26), 0 0 2px rgba(0, 0, 0, 0.29), inset 0 2px 3px rgba(255, 255, 255, 0.06);
+}
+
+.display{
+    border: none;
+    padding-top: 25px;
+    width: 288px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.preview{
+    width: 228px;
+    border: none;
+    background-color: transparent;
+    text-align: end;
+    color: #6B6B6B;
+    font-size: 2rem;
+    padding-right: 5px;
+}
+
+.result-column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:#6B6B6B;
+    padding-right: 15px;
+    font-size: 20px;
+}
+.equal-mark{
+    padding-top: 30px;
+    padding-left: 20px;
+    color: #6B6B6B;
+    font-size: 2rem;
+    
+}
+
+.result{
+    width: 228px;
+    border: none;
+    background-color: transparent;
+    text-align: end;
+    color: white;
+    font-size: 4rem;
+    text-overflow: "";
+}
+
+
+.calc-buttons{
+    width: 300px;
+    height: 368px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+button{
+    height: 64px;
+    width: 64px;
+    border: 0 transparent;
+    margin: 0 2px 0 2px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), #2D2A37;
+    box-shadow: 0 11px 7px rgba(0, 0, 0, 0.01), 0 7px 7px rgba(0, 0, 0, 0.04), 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.26), 0 0 2px rgba(0, 0, 0, 0.29), inset 0 2px 3px rgba(255, 255, 255, 0.06);
+    color: white;
+    border-radius: 45px;    
+    font-size: 1.5rem;
+}
+
+.clear-display{
+    color:#975DFA;
+}
+
+.line{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.line :last-child{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0.01%, rgba(255, 255, 255, 0.05) 100%), #462878;
+    box-shadow: 0 11px 7px rgba(0, 0, 0, 0.01), 0 7px 7px rgba(0, 0, 0, 0.04), 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.26), 0 0 2px rgba(0, 0, 0, 0.29), inset 0 2px 3px rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+#equals{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%), #7F45E2;
+    box-shadow: 0px 11px 7px rgba(0, 0, 0, 0.01), 0px 7px 7px rgba(0, 0, 0, 0.04), 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.26), 0px 0px 2px rgba(0, 0, 0, 0.29), inset 0px 2px 3px rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+}
+
