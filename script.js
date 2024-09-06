@@ -7,7 +7,7 @@ const maxLength = 9;
 let inputNumber = '';
 let resultNumber = '';
 let currentOperation = '';
-let operator = undefined;
+let operation = undefined;
 
 buttons.forEach(b => {
     b.addEventListener('click', (e) => onButtonClick(e.target));
@@ -75,53 +75,45 @@ function onOperatorClick(button) {
     }
 
     if (resultNumber) {
-        resultNumber = operator(
+        resultNumber = operation(
             parseFloat(resultNumber),
             parseFloat(inputNumber),
-
         );
-            console.log('n1: ' + inputNumber);
-            console.log('n2: ' + resultNumber);
     } else {
         resultNumber = inputNumber;
-        console.log('n1: ' + inputNumber);
-        console.log('n2: ' + resultNumber);
     }
 
-    if(button.value !== '='){
+    if (button.value !== '=') {
         currentOperation = resultNumber + `${button.value}`;
     } else {
-        console.log('po');
         currentOperation = resultNumber;
-        console.log('rn: '+resultNumber);
     }
 
-    console.log('cc: '+currentOperation);
     inputNumber = '';
 
-    result.placeholder = resultNumber;
+    result.placeholder = '';
 
     switch (button.value) {
         case '+':
-            operator = (n1, n2) => n1 + n2;
+            operation = (n1, n2) => n1 + n2;
             break;
         case '-':
-            operator = (n1, n2) => n1 - n2;
+            operation = (n1, n2) => n1 - n2;
             break;
         case '*':
-            operator = (n1, n2) => n1 * n2;
+            operation = (n1, n2) => n1 * n2;
             break;
         case '/':
-            operator = (n1, n2) => {
-                if(n1 || n2 === 0){
-                    return 'Erro';
+            operation = (n1, n2) => {
+                if (n2 !== 0) {
+                    return n1 / n2;
+                } else {
+                    return "Erro";
                 }
-                    n1 / n2;
             }
             break;
         case '=':
-            console.log('aqui '+currentOperation);
-            operator = (n1, n2) => result.value = eval(currentOperation);
+            operation = () => eval(currentOperation);
             break;
         default:
             throw 'Operador invalido';
@@ -153,7 +145,6 @@ function onDecimalPointClick(button) {
  * @param button recebe o botão clicado
  */
 function onOutroClick(button) {
-console.log(button.value)
     switch (button.value) {
         case '+/-':
             if (!inputNumber) {
@@ -165,20 +156,20 @@ console.log(button.value)
             inputNumber = '';
             resultNumber = '';
             currentOperation = '';
-            operator = undefined;
+            operation = undefined;
             result.placeholder = '0';
             break;
         case 'C':
             inputNumber = inputNumber.slice(0, -1);
             break;
         case '%':
-            if(!inputNumber || !resultNumber){
+            if (!inputNumber || !resultNumber) {
                 return;
             } else {
-                inputNumber = parseFloat(inputNumber/resultNumber).toFixed(2);
+                inputNumber = parseFloat(inputNumber / resultNumber).toFixed(2);
                 result.value = inputNumber;
-            }            
-            
+            }
+
             break;
         default:
             throw 'Botao invalido';
